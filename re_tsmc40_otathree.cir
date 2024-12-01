@@ -1,0 +1,81 @@
+** Generated for: hspiceD
+** Generated on: Nov 13 02:34:23 2024
+** Design library name: nod
+** Design cell name: tb_OTA_three
+** Design view name: schematic
+.GLOBAL vdd!
+.PARAM c1=0.5879pf c2=1.0150pf l1=3.2434u l2=3.3463u l3=0.3386u l4=1.0546u l5=4.8290u l6=0.2180u l7=0.2375u l8=0.7214u l9=3.0837u w1=23.6038u w2=6.4568u w3=75.9909u w4=6.2373u w5=18.7688u w6=14.4580u w7=10.3793u w8=15.9820u w9=61.0763u 
+
++	l7=500n l8=500n l9=500n w1=1.8u w2=450n w3=1.8u w4=4.05u w5=900n w6=2u 
++	w7=1.8u w8=8.75u w9=2u
+
+
+.PROBE DC
++    V(net4)
++    V(net3)
+.PROBE AC
++    V(net4) VP(net4)
++    V(net3) VP(net3)
+.AC DEC 10  
+
+.DC    
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
++    HIER_DELIM=0
+.LIB "C:/DAC/vanilla_bo_in_highdim-main/Simulation/Data/TSMC40/models/hspice/toplevel_crn40lp_1d8_v2d0_2_shrink0d9_embedded_usage.l" TOP_TT
+
+** Library name: nod
+** Cell name: OTA_three
+** View name: schematic
+.subckt OTA_three _net1 _net0 vout
+m11 bias1 bias1 0 0 nch l=1e-6 w=3.5e-6 m=1 nf=1 sd=140e-9 ad=385e-15 as=385e-15 pd=7.22e-6 ps=7.22e-6 nrd=9.015e-3 nrs=9.015e-3 sa=110e-9 sb=110e-9
+m10 vout net10 0 0 nch l=l4 w=w4 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w4)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w4)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w4)/1)+(2-int(1.0)*2)*(140e-9+(1*w4)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w4)/1)+(2-int(1.0)*2)*(300e-9+(3*w4)/1)'
+m9 net10 net11 0 0 nch l=l9 w=w9 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w9)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w9)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w9)/1)+(2-int(1.0)*2)*(140e-9+(1*w9)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w9)/1)+(2-int(1.0)*2)*(300e-9+(3*w9)/1)'
+m8 net11 net11 0 0 nch l=l6 w=w6 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w6)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w6)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w6)/1)+(2-int(1.0)*2)*(140e-9+(1*w6)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w6)/1)+(2-int(1.0)*2)*(300e-9+(3*w6)/1)'
+m4 net7 bias1 0 0 nch l=l5 w=w5 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w5)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w5)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w5)/1)+(2-int(1.0)*2)*(140e-9+(1*w5)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w5)/1)+(2-int(1.0)*2)*(300e-9+(3*w5)/1)'
+m1 net9 _net0 net7 0 nch l=l2 w=w2 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w2)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w2)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w2)/1)+(2-int(1.0)*2)*(140e-9+(1*w2)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w2)/1)+(2-int(1.0)*2)*(300e-9+(3*w2)/1)'
+m0 net6 _net1 net7 0 nch l=l2 w=w2 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w2)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w2)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w2)/1)+(2-int(1.0)*2)*(140e-9+(1*w2)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w2)/1)+(2-int(1.0)*2)*(300e-9+(3*w2)/1)'
+m13 bias3 bias3 vdd! vdd! pch l=1e-6 w=14e-6 m=1 nf=1 sd=140e-9 ad=1.54e-12 as=1.54e-12 pd=28.22e-6 ps=28.22e-6 nrd=3.274e-3 nrs=3.274e-3 sa=110e-9 sb=110e-9
+m12 bias2 bias2 vdd! vdd! pch l=1e-6 w=14e-6 m=1 nf=1 sd=140e-9 ad=1.54e-12 as=1.54e-12 pd=28.22e-6 ps=28.22e-6 nrd=3.274e-3 nrs=3.274e-3 sa=110e-9 sb=110e-9
+m7 vout bias3 vdd! vdd! pch l=l8 w=w8 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w8)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w8)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w8)/1)+(2-int(1.0)*2)*(140e-9+(1*w8)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w8)/1)+(2-int(1.0)*2)*(300e-9+(3*w8)/1)'
+m6 net10 bias2 vdd! vdd! pch l=l7 w=w7 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w7)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w7)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w7)/1)+(2-int(1.0)*2)*(140e-9+(1*w7)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w7)/1)+(2-int(1.0)*2)*(300e-9+(3*w7)/1)'
+m5 net11 net9 vdd! vdd! pch l=l3 w=w3 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w3)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w3)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w3)/1)+(2-int(1.0)*2)*(140e-9+(1*w3)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w3)/1)+(2-int(1.0)*2)*(300e-9+(3*w3)/1)'
+m3 net9 net6 vdd! vdd! pch l=l1 w=w1 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w1)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w1)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w1)/1)+(2-int(1.0)*2)*(140e-9+(1*w1)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w1)/1)+(2-int(1.0)*2)*(300e-9+(3*w1)/1)'
+m2 net6 net6 vdd! vdd! pch l=l1 w=w1 m=1 nf=1 sd=140e-9 ad='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*70e-9)*w1)/1' as='(((1-int(500e-3)*2)*110e-9+(2-int(1.0)*2)*150e-9)*w1)/1' pd='(1-int(500e-3)*2)*(220e-9+(2*w1)/1)+(2-int(1.0)*2)*(140e-9+(1*w1)/1)' ps='(1-int(500e-3)*2)*(220e-9+(2*w1)/1)+(2-int(1.0)*2)*(300e-9+(3*w1)/1)'
+c1 net9 vout c1
+c0 net10 vout c2
+i1 bias3 0 DC=20e-6
+iv1 bias2 0 DC=20e-6
+iv0 vdd! bias1 DC=20e-6
+.ends OTA_three
+** End of subcircuit definition.
+
+** Library name: nod
+** Cell name: tb_OTA_three
+** View name: schematic
+v3 net2 0 DC=900e-3
+v2 vdd! 0 DC=1.8
+v4 net3 net4 DC=0 AC 1
+xi2 net3 net2 net4 OTA_three
+c0 net4 0 5e-12
+
+.control
+op
+AC DEC 10 0.01 100000K
+settype decibel net4
+settype decibel net3
+plot db(net4/net3) xlimit 1 100000k ylabel 'small signal gain'
+settype phase net4
+settype phase net3
+plot cph(net4/net3) xlimit 1 100000k ylabel 'phase (in rad)'
+let outd = 180/PI*cph(net4/net3)
+settype phase outd
+plot outd xlimit 1 100000k ylabel 'phase'
+.endc
+
+.END
